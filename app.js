@@ -5,11 +5,26 @@ var hourArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm',
  
 // 1st and Pike Location
 var firstPike = {
+  name: '1st and Pike',
   mincust: 23, 
   maxcust: 65,
   avecookie: 6.3,
-  randomNum = Math.round(math.random()*(maxcust-mincust+1)+mincust),
+  randcustArr: [],
+  randcust: function() {
+    for(var i  = 0; i < hourArr.length; i++){
+      var random = Math.floor(Math.random() * (this.maxcust-this.mincust) + this.mincust);
+      this.randcustArr.push(random);
+    }
+    console.log(random)
+  },
+  randcookieArr: [],
+  randCookies: function() {
+    for(var i = 0; i < randcustArr.length; i++){
+     this.randcookieArr.push(randcustArr[i]*this.avecookie);
+    }
+  }
 };
+
 // renderfunction()
 
 // SeaTac Airport
