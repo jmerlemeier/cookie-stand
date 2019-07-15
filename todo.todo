@@ -2,13 +2,13 @@
 
 ✔ command enter gives you a box @done (7/15/2019, 1:49:04 PM)
 
-☐  MAKE SURE you round the random number
+✔ MAKE SURE you round the random number @done (7/15/2019, 4:29:42 PM)
 
 ✔ Make sure to make each location is its own JavaScript object. @done (7/15/2019, 1:49:40 PM)
 
-☐ Create a separate JS object literal
+✔ Create a separate JS object literal @done (7/15/2019, 4:29:47 PM)
 
-  ☐ Stores the min/max hourly customers, and the average cookies per customer, in object properties
+  ☐  Stores the min/max hourly customers, and the average cookies per customer, in object properties
 
   ☐ Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
 
