@@ -8,15 +8,15 @@
 
 ✔ Create a separate JS object literal @done (7/15/2019, 4:29:47 PM)
 
-  ☐  Stores the min/max hourly customers, and the average cookies per customer, in object properties
+  ✔ Stores the min/max hourly customers, and the average cookies per customer, in object properties @done (7/15/2019, 5:46:04 PM)
 
-  ☐ Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
+  ✔ Uses a method of that object to generate a random number of customers per hour. Objects/Math/random @done (7/15/2019, 5:46:00 PM)
 
-  ☐ Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
+  ✔ Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated @done (7/15/2019, 5:45:56 PM)
 
-  ☐ Store the results for each location in a separate array... perhaps as a property of the object representing that location
+  ✔ Store the results for each location in a separate array... perhaps as a property of the object representing that location @done (7/15/2019, 5:45:53 PM)
 
-  ☐ Display the values of each array as unordered lists in the browser
+  ✔ Display the values of each array as unordered lists in the browser @done (7/15/2019, 5:45:24 PM)
 
   ☐ Calculating the sum of these hourly totals; your output for each location should look like this:
 
@@ -40,7 +40,7 @@
   Total: 657 cookies
 
 
-  ☐ sales.html
+  ✔ sales.html @done (7/15/2019, 5:46:11 PM)
 
   ☐  Here are the starting numbers that you'll need to build these objects:
   
