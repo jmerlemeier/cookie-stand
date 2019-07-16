@@ -14,6 +14,9 @@ var hourArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm',
 // Locations Array
 var allLocations = [];
 
+//TABLE
+var tableBody = document.getElementById('table');
+
 //1st and Pike Location min23, max65, ave6.3
 // GLOBAL CONSTRUCTOR-----------------------------
 
@@ -67,7 +70,7 @@ Location.prototype.render = function(){
     for(var i=0; i < hourArr.length; i++){
       var liEl = document.createElement('li');
       liEl.textContent = this.unorderedArr[i];
-      ulEl.appendChild(liEl);
+      ulFirstPike.appendChild(liEl);
     }
     var liEl = document.createElement('li');
     liEl.textContent = `TOTAL: ${this.cookieTotal} cookies`;
@@ -85,3 +88,40 @@ new Location('Alki', 2, 16, 4.6);
 for(var i = 0; i < allLocations.length; i++){
   allLocations[i].render();
 };
+
+// TABLE TIME-!!!!!!!!!!!!!---------------------------
+// HEADER
+function makeHeader (){
+  // declaring elements
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  // appends
+  tableBody.appendChild(trEl);
+  // content
+  thEl.textContent = 'gibberish';
+  // appends
+  trEl.appendChild(thEl); 
+};
+makeHeader();
+
+
+// Make a Header (loop through an array)
+//  - add text: thEl.textContent = 'stuffinarray';
+//  - append th to tr: trEl.appendChild(thEl);
+//  - append tr to the tableBody: tableBody.appendChild(trEl);
+
+// use for loop to iterate through array to make the table
+// var headerText = array?
+      // for(var i = 0, i < headerText.length, i++) {
+      //   var thEl = document.createElement('th');
+      //   thEl.textContent = headerText[i];
+      // };
+
+// use constructor function info to render - use a for loop
+//  - create tr
+//  - append to tableBody
+//  - create td
+//  - add content
+//  - append to tr 
+
+
