@@ -12,6 +12,27 @@ var totalcookiesalesperHour = [];
 
 //TABLE Variable
 var tableBody = document.getElementById('table');
+//FORM Variable
+var formEl = document.getElementById('myForm');
+
+// put a listener on the form -event(submit, callback function)
+formEl.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  var storename = e.target.storename.value;
+  console.log(storename);
+  var minimumcustomers = e.target.minimumcustomers.value;
+  console.log(minimumcustomers);
+  var maximumcustomers = e.target.maximumcustomers.value;
+  console.log(maximumcustomers);
+  var averagecookies = e.target.averagecookies.value;
+  console.log(averagecookies);
+
+//New instance
+new Location(storename, minimumcustomers, maximumcustomers, averagecookies);
+})
+// Store the info from the form in some variables
+// Take those variables and run them through the constructor function to create new instances.
 
 //1st and Pike Location min23, max65, ave6.3
 // GLOBAL CONSTRUCTOR-----FUNCTION-----------------
@@ -139,7 +160,7 @@ function makeFooter() {
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   
-  tdEl.textContent = 'Hourly Total';
+  tdEl.textContent = 'Hourly Totals for all Locations';
   
   trEl.appendChild(tdEl);
   tableBody.appendChild(trEl);
@@ -172,4 +193,5 @@ function makeFooter() {
 makeFooter();
 
 
+// Forms-Constructor
 
