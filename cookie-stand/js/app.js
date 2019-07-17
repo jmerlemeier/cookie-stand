@@ -7,6 +7,9 @@ var hourArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm',
 // Locations Array, will contain ENTIRE OBJECT INSTANCES (The made car/store from the factory)
 var allLocations = [];
 
+// Total Cookie Sales ARRAY
+var totalcookiesalesperHour = [];
+
 //TABLE Variable
 var tableBody = document.getElementById('table');
 
@@ -21,6 +24,7 @@ function Location(name, mincust, maxcust, avecookie) {//factory
   this.randcustArr = [];
   this.randcookieArr = [];
   allLocations.push(this); //pushes all made cars/stores (instance) into the array
+  
 }
 
 //RANDOM CUSTOMER METHOD PROTOTYPE----------------protoypes apply for every instance (every car/every store)
@@ -130,19 +134,39 @@ function makeHeader (){
 //JULIE DONT TOUCH ABOVE STUFF!!!!!-----------------
 
 //********   FOOTER   ************
-
-//First cell************
 function makeFooter() {
+  //First cell************
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
-
+  
   tdEl.textContent = 'Hourly Total';
-
+  
   trEl.appendChild(tdEl);
   tableBody.appendChild(trEl);
-}
+  
+  //Body of Footer***********
+  for(i = 0; i < hourArr.length; i++) {
+    var hourlyTotal = 0; 
+    
+    for(var j = 0; j < allLocations.length; j++){
+      hourlyTotal += allLocations[j].randcookieArr[i];
+    }
+    
+    tdEl = document.createElement('td');
+    tdEl.textContent = hourlyTotal;
+    // Append
+    trEl.appendChild(tdEl);
+  }
+  //Last cell************
+  var grandTotal = 0;
+  for(var i=0; i < allLocations.length; i++) {
+    grandTotal += allLocations[i].cookieTotal;
+  }
 
-//Last cell************
+  tdEl = document.createElement('td');
+  tdEl.textContent = grandTotal;
+  trEl.appendChild(tdEl);
+};
 
 //Call FOOTER FUNCTION
 makeFooter();
