@@ -89,9 +89,8 @@ for(var i = 0; i < allLocations.length; i++){
 };
 
 // TABLE TIME-!!!!!!!!!!!!!---------------------------
-// HEADER
-// LOCATION
-// Times
+//********HEADER************
+//LOCATION************
 function makeHeader (){
 var trEl = document.createElement('tr');
 var tdEl = document.createElement('td');
@@ -99,6 +98,7 @@ tdEl.textContent = 'Location';
 trEl.appendChild(tdEl);
 tableBody.appendChild(trEl);
 
+//Hours************
 for(var i=0; i < hourArr.length; i++){
     // declaring elements
     var thEl = document.createElement('th');
@@ -109,25 +109,74 @@ for(var i=0; i < hourArr.length; i++){
     trEl.appendChild(thEl); 
   };
 
-// var trEl = document.createElement('tr');
-var tdElement = document.createElement('td');
+//TOTAL************
+  var tdElement = document.createElement('td');
 tdElement.textContent = 'Total';
 trEl.appendChild(tdElement);
 tableBody.appendChild(trEl);
 };
 makeHeader();
 
-// what is the html that will make this table look how  want
-// Think parents and Children
-// <table>
-//  <tbody id="table">
-//    <tr>
-//     <th>
-
+//********STORE ROWS************
 //MAKE NAME of STORE
 //Hard Code first bit
 //loop
 //hard code last bit
 
+//FIRST AND PIKE**
+Location.prototype.randcookieArr = 
+function makeStoreRow (){
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = '1st and Pike';
+  trEl.appendChild(tdEl);
+  tableBody.appendChild(trEl);
 
+  //AVERAGE COOKIE SALE FOR 1st and PIKE
+  this.randcust();
+  for(var i=0; i < hourArr.length; i++){
+    // declaring elements
+    var tdEl = document.createElement('td');
+    // appends
+    // content
+    thEl.textContent = randcookieArr [i];
+    // appends
+    trEl.appendChild(tdEl); 
+  };
+  //TOTAL for 1st and pike
+    var tdEl = document.createElement('td');
+    tdEl.textContent = //pike cookie total(Need to make prototype?Location.prototype.cookieTotal);
+    trEl.appendChild(tdEl);
 
+};
+// RENDER OR CALL?
+makeStoreRow();
+
+//FOOTER*************************************
+//LOCATION************
+function makeFooter (){
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = 'Hourly Totals';
+  trEl.appendChild(tdEl);
+  tableBody.appendChild(trEl);
+  
+  //Hourly Cookie totals for all locations************
+  for(var i=0; i < hourArr.length; i++){
+      // declaring elements
+      var tdEl = document.createElement('td');
+      // appends
+      // content
+      tdEl.textContent = //average cookie sales each hour;
+      // appends
+      trEl.appendChild(tdEl); 
+    };
+  
+  //TOTAL************
+    var tdElement = document.createElement('td');
+  tdElement.textContent = 'Grand Total';
+  trEl.appendChild(tdElement);
+  tableBody.appendChild(trEl);
+  };
+  makeFooter();
+  
