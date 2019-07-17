@@ -170,3 +170,6 @@ function makeFooter() {
 
 //Call FOOTER FUNCTION
 makeFooter();
+
+
+
