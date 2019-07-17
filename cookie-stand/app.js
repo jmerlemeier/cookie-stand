@@ -8,13 +8,12 @@ var ulSeatteCenter = document.getElementById('seattlecenter-cookie-list');
 var ulCapHill = document.getElementById('capitolhill-cookie-list');
 var ulAlki = document.getElementById('alki-cookie-list');
 
+// Global Variable
 //Hour Array
 var hourArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
-
 // Locations Array
 var allLocations = [];
-
-//TABLE
+//TABLE Variable
 var tableBody = document.getElementById('table');
 
 //1st and Pike Location min23, max65, ave6.3
@@ -91,37 +90,44 @@ for(var i = 0; i < allLocations.length; i++){
 
 // TABLE TIME-!!!!!!!!!!!!!---------------------------
 // HEADER
+// LOCATION
+// Times
 function makeHeader (){
-  // declaring elements
-  var trEl = document.createElement('tr');
-  var thEl = document.createElement('th');
-  // appends
-  tableBody.appendChild(trEl);
-  // content
-  thEl.textContent = 'gibberish';
-  // appends
-  trEl.appendChild(thEl); 
+var trEl = document.createElement('tr');
+var tdEl = document.createElement('td');
+tdEl.textContent = 'Location';
+trEl.appendChild(tdEl);
+tableBody.appendChild(trEl);
+
+for(var i=0; i < hourArr.length; i++){
+    // declaring elements
+    var thEl = document.createElement('th');
+    // appends
+    // content
+    thEl.textContent = hourArr[i];
+    // appends
+    trEl.appendChild(thEl); 
+  };
+
+// var trEl = document.createElement('tr');
+var tdElement = document.createElement('td');
+tdElement.textContent = 'Total';
+trEl.appendChild(tdElement);
+tableBody.appendChild(trEl);
 };
 makeHeader();
 
+// what is the html that will make this table look how  want
+// Think parents and Children
+// <table>
+//  <tbody id="table">
+//    <tr>
+//     <th>
 
-// Make a Header (loop through an array)
-//  - add text: thEl.textContent = 'stuffinarray';
-//  - append th to tr: trEl.appendChild(thEl);
-//  - append tr to the tableBody: tableBody.appendChild(trEl);
+//MAKE NAME of STORE
+//Hard Code first bit
+//loop
+//hard code last bit
 
-// use for loop to iterate through array to make the table
-// var headerText = array?
-      // for(var i = 0, i < headerText.length, i++) {
-      //   var thEl = document.createElement('th');
-      //   thEl.textContent = headerText[i];
-      // };
-
-// use constructor function info to render - use a for loop
-//  - create tr
-//  - append to tableBody
-//  - create td
-//  - add content
-//  - append to tr 
 
 
