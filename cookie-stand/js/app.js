@@ -1,13 +1,5 @@
 'use strict';
 
-
-//Store my DOM node in a variable (DO NOT NEED IN TABLE)
-// var ulFirstPike = document.getElementById('pike-cookie-list');
-// var ulSeaTac = document.getElementById('seatac-cookie-list');
-// var ulSeatteCenter = document.getElementById('seattlecenter-cookie-list');
-// var ulCapHill = document.getElementById('capitolhill-cookie-list');
-// var ulAlki = document.getElementById('alki-cookie-list');
-
 // Global Variable-----EVERYTHING WILL USE THESE (NOT SPECIFIC)---------------------
 //Hour Array
 var hourArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
@@ -63,7 +55,7 @@ Location.prototype.render = function(){
 
   //Make Location
   //create td
-  var tdEl = document.createElement ('td');
+  var tdEl = document.createElement('td');
   //give it content - this.name
   tdEl.textContent = this.name;
   //tr appendChild td
@@ -83,7 +75,7 @@ Location.prototype.render = function(){
   }
   //make total
   //create td element
-
+  tdEl = document.createElement('td');
   //this.total
   tdEl.textContent = this.cookieTotal;
   //append
@@ -92,7 +84,7 @@ Location.prototype.render = function(){
 };
 // Instances-----------------------------------
 new Location('1st and Pike', 23, 65, 6.3);
-new Location('SeaTac', 3, 24, 6.3);
+new Location('SeaTac', 3, 24, 1.2);
 new Location('Seattle Center', 11, 38, 3.7);
 new Location('Capitol Hill', 20, 38, 2.3);
 new Location('Alki', 2, 16, 4.6);
@@ -103,10 +95,12 @@ makeHeader();
 // CALL YOUR RENDER!!!-----------------------------
 for(var i = 0; i < allLocations.length; i++){
   allLocations[i].render();
-};
+}
 
 // TABLE TIME-!!!!!!!!!!!!!---------------------------
-//********HEADER************
+
+//********   HEADER   ************
+
 //LOCATION************
 function makeHeader (){
   var trEl = document.createElement('tr');
@@ -126,72 +120,29 @@ function makeHeader (){
     trEl.appendChild(thEl);
   }
 
-//TOTAL************
-  var tdElement = document.createElement('td');
-  tdElement.textContent = 'Total';
-  trEl.appendChild(tdElement);
+  //TOTAL************
+  tdEl = document.createElement('td');
+  tdEl.textContent = 'Total';
+  trEl.appendChild(tdEl);
   tableBody.appendChild(trEl);
 }
 
-// //********STORE ROWS************
-// //MAKE NAME of STORE
-// //Hard Code first bit
-// //loop
-// //hard code last bit
+//JULIE DONT TOUCH ABOVE STUFF!!!!!-----------------
 
-// //FIRST AND PIKE**
-// Location.prototype.randcookieArr =
-// function makeStoreRow (){
-//   var trEl = document.createElement('tr');
-//   var tdEl = document.createElement('td');
-//   tdEl.textContent = '1st and Pike';
-//   trEl.appendChild(tdEl);
-//   tableBody.appendChild(trEl);
+//********   FOOTER   ************
 
-//   //AVERAGE COOKIE SALE FOR 1st and PIKE
-//   this.randcust();
-//   for(var i=0; i < hourArr.length; i++){
-//     // declaring elements
-//     var tdEl = document.createElement('td');
-//     // appends
-//     // content
-//     thEl.textContent = randcookieArr [i];
-//     // appends
-//     trEl.appendChild(tdEl);
-//   };
-//   //TOTAL for 1st and pike
-//     var tdEl = document.createElement('td');
-//     tdEl.textContent = //pike cookie total(Need to make prototype?Location.prototype.cookieTotal);
-//     trEl.appendChild(tdEl);
+//First cell************
+function makeFooter() {
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
 
-// };
-// // RENDER OR CALL?
-// makeStoreRow();
+  tdEl.textContent = 'Hourly Total';
 
-// //FOOTER*************************************
-// //LOCATION************
-// function makeFooter (){
-//   var trEl = document.createElement('tr');
-//   var tdEl = document.createElement('td');
-//   tdEl.textContent = 'Hourly Totals';
-//   trEl.appendChild(tdEl);
-//   tableBody.appendChild(trEl);
+  trEl.appendChild(tdEl);
+  tableBody.appendChild(trEl);
+}
 
-//   //Hourly Cookie totals for all locations************
-//   for(var i=0; i < hourArr.length; i++){
-//       // declaring elements
-//       var tdEl = document.createElement('td');
-//       // appends
-//       // content
-//       tdEl.textContent = //average cookie sales each hour;
-//       // appends
-//       trEl.appendChild(tdEl);
-//     };
+//Last cell************
 
-//   //TOTAL************
-//     var tdElement = document.createElement('td');
-//   tdElement.textContent = 'Grand Total';
-//   trEl.appendChild(tdElement);
-//   tableBody.appendChild(trEl);
-//   };
-//   makeFooter();
+//Call FOOTER FUNCTION
+makeFooter();
