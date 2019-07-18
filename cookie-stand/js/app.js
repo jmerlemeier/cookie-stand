@@ -30,6 +30,13 @@ function Location(name, mincust, maxcust, avecookie) {//factory
 
 }
 
+// HELPER FUNCTION, REMEBER TO CALL IT, ADD IF STATEMENTS inside.
+// function addElement(childElType, childContent, parentEl){
+//   var childElement = document.createElement(childElType);
+//   childElement.textContent = childContent;
+//   parentEl.appendChild(childElement);
+// }
+
 //RANDOM CUSTOMER METHOD PROTOTYPE----------------protoypes apply for every instance (every car/every store)
 //*********  PROTOTYPES  *********
 Location.prototype.generaterandcustArr = //first time we see generaterandcustArr
@@ -124,33 +131,28 @@ function makeFooter() {
   trEl.appendChild(tdEl);
   tableBody.appendChild(trEl);
 
+  var grandTotal = 0;
   //Body of Footer***********
   for(i = 0; i < hourArr.length; i++) {
     var hourlyTotal = 0;
-
     for(var j = 0; j < allLocations.length; j++){
       hourlyTotal += allLocations[j].randcookieArr[i];
+      grandTotal += allLocations[j].randcookieArr[i];
     }
-
     tdEl = document.createElement('td');
     tdEl.textContent = hourlyTotal;
     trEl.appendChild(tdEl);
   }
-  //Last cell of footer************
-  var grandTotal = 0;
-  for(var i=0; i < allLocations.length; i++) {
-    grandTotal += allLocations[i].cookieTotal;
-  }
-
   tdEl = document.createElement('td');
   tdEl.textContent = grandTotal;
   trEl.appendChild(tdEl);
+  tableBody.appendChild(trEl);
 }
 
 
 //EVENT LISTENER---------------------------------------------
 // put a listener on the form -event(submit, callback function)
-formEl.addEventListener('submit', function(e){
+formEl.addEventListener('submit', function(e){//anonymous function which is the HANDLER!!
   e.preventDefault();
 
   var storename = e.target.storename.value;
