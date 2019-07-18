@@ -51,54 +51,40 @@ function(){
   console.log('I am inside generaterandcookiesArr prototype.');
 };
 
-// ********* RENDER *********
+// ********* RENDER ALL *********
 Location.prototype.render = function(){
   this.generaterandcustArr();//order matters
   this.generaterandcookiesArr();
 
-  //create tr
   var trEl = document.createElement('tr');
-  //tableBody append tr
   tableBody.appendChild(trEl);
 
   //Make Location
-  //create td
   var tdEl = document.createElement('td');
-  //give it content - this.name
   tdEl.textContent = this.name;
-  //tr appendChild td
   trEl.appendChild(tdEl);
 
-  //MAKE DATA
   //Make my data - cookes/hr
   for(var i=0; i < hourArr.length; i++){
-    //1. Create Element - td
+
     tdEl = document.createElement('td');
-
-    //2. Give content.
     tdEl.textContent = this.randcookieArr[i];
-
-    //3.Append it to the DOM.
     trEl.appendChild(tdEl);
   }
-  //make total
-  //create td element
+
   tdEl = document.createElement('td');
-  //this.total
   tdEl.textContent = this.cookieTotal;
-  //append
   trEl.appendChild(tdEl);
 
 };
-// Instances-----------------------------------
+//Instances-----------------------------------
 new Location('1st and Pike', 23, 65, 6.3);
 new Location('SeaTac', 3, 24, 1.2);
 new Location('Seattle Center', 11, 38, 3.7);
 new Location('Capitol Hill', 20, 38, 2.3);
 new Location('Alki', 2, 16, 4.6);
 
-
-// TABLE TIME-!!!!!!!!!!!!!---------------------------
+//TABLE TIME !!!!!!!!!!!!!---------------------------
 
 //********   HEADER   ************
 //LOCATION************
@@ -108,7 +94,7 @@ function makeHeader (){
   tdEl.textContent = 'Location';
   trEl.appendChild(tdEl);
   tableBody.appendChild(trEl);
-  
+
   //Hours************
   for(var i=0; i < hourArr.length; i++){
     // declaring elements
@@ -119,7 +105,7 @@ function makeHeader (){
     // appends
     trEl.appendChild(thEl);
   }
-  
+
   //TOTAL************
   tdEl = document.createElement('td');
   tdEl.textContent = 'Total';
@@ -127,38 +113,35 @@ function makeHeader (){
   tableBody.appendChild(trEl);
 }
 
-//JULIE DONT TOUCH ABOVE STUFF!!!!!-----------------
-
 //********   FOOTER   ************
 function makeFooter() {
   //First cell************
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
-  
+
   tdEl.textContent = 'Hourly Totals for all Locations';
-  
+
   trEl.appendChild(tdEl);
   tableBody.appendChild(trEl);
-  
+
   //Body of Footer***********
   for(i = 0; i < hourArr.length; i++) {
     var hourlyTotal = 0;
-    
+
     for(var j = 0; j < allLocations.length; j++){
       hourlyTotal += allLocations[j].randcookieArr[i];
     }
-    
+
     tdEl = document.createElement('td');
     tdEl.textContent = hourlyTotal;
-    // Append
     trEl.appendChild(tdEl);
   }
-  //Last cell************
+  //Last cell of footer************
   var grandTotal = 0;
   for(var i=0; i < allLocations.length; i++) {
     grandTotal += allLocations[i].cookieTotal;
   }
-  
+
   tdEl = document.createElement('td');
   tdEl.textContent = grandTotal;
   trEl.appendChild(tdEl);
@@ -169,7 +152,7 @@ function makeFooter() {
 // put a listener on the form -event(submit, callback function)
 formEl.addEventListener('submit', function(e){
   e.preventDefault();
-  
+
   var storename = e.target.storename.value;
   console.log(storename);
   var minimumcustomers = e.target.minimumcustomers.value;
@@ -178,7 +161,7 @@ formEl.addEventListener('submit', function(e){
   console.log(maximumcustomers);
   var averagecookies = e.target.averagecookies.value;
   console.log(averagecookies);
-  
+
   //New instance
   new Location(storename, minimumcustomers, maximumcustomers, averagecookies);
 
