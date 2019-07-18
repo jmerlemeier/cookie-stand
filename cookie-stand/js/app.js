@@ -1,41 +1,23 @@
 'use strict';
 
-// Global Variable-----EVERYTHING WILL USE THESE (NOT SPECIFIC)---------------------
-//Hour Array
+// GLOBAL VARIABLE-----EVERYTHING WILL USE THESE (NOT SPECIFIC)---------------------
+//*********  Hour Array  *********
 var hourArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-// Locations Array, will contain ENTIRE OBJECT INSTANCES (The made car/store from the factory)
+//*********  Locations Array  ********
+//      will contain ENTIRE OBJECT INSTANCES (The made car/store from the factory)
 var allLocations = [];
 
-// Total Cookie Sales ARRAY
+//*********  Total Cookie Sales Array  ********
 var totalcookiesalesperHour = [];
 
-//TABLE Variable
+//*********  Table Element  *********
 var tableBody = document.getElementById('table');
-//FORM Variable
+
+//*********  Form Element  *********
 var formEl = document.getElementById('myForm');
 
-// put a listener on the form -event(submit, callback function)
-formEl.addEventListener('submit', function(e){
-  e.preventDefault();
-
-  var storename = e.target.storename.value;
-  console.log(storename);
-  var minimumcustomers = e.target.minimumcustomers.value;
-  console.log(minimumcustomers);
-  var maximumcustomers = e.target.maximumcustomers.value;
-  console.log(maximumcustomers);
-  var averagecookies = e.target.averagecookies.value;
-  console.log(averagecookies);
-
-//New instance
-new Location(storename, minimumcustomers, maximumcustomers, averagecookies);
-})
-// Store the info from the form in some variables
-// Take those variables and run them through the constructor function to create new instances.
-
-//1st and Pike Location min23, max65, ave6.3
-// GLOBAL CONSTRUCTOR-----FUNCTION-----------------
+// GLOBAL CONSTRUCTOR FUNCTION-------------------
 function Location(name, mincust, maxcust, avecookie) {//factory
   this.name = name;
   this.mincust = mincust;
@@ -45,10 +27,11 @@ function Location(name, mincust, maxcust, avecookie) {//factory
   this.randcustArr = [];
   this.randcookieArr = [];
   allLocations.push(this); //pushes all made cars/stores (instance) into the array
-  
+
 }
 
 //RANDOM CUSTOMER METHOD PROTOTYPE----------------protoypes apply for every instance (every car/every store)
+//*********  PROTOTYPES  *********
 Location.prototype.generaterandcustArr = //first time we see generaterandcustArr
 function(){
   for(var i  = 0; i < hourArr.length; i++){
@@ -58,7 +41,7 @@ function(){
   console.log('I am inside generaterandcustArr prototype.');
 };
 
-//RANDOM COOKIES METHOD PROTOTYPE-----------------
+//*********  RANDOM COOKIES METHOD PROTOTYPE  *********
 Location.prototype.generaterandcookiesArr =
 function(){
   for(var i = 0; i < hourArr.length; i++){
@@ -68,7 +51,7 @@ function(){
   console.log('I am inside generaterandcookiesArr prototype.');
 };
 
-// RENDER NEEDS TO BE A PROTOYPE--------------------
+// ********* RENDER *********
 Location.prototype.render = function(){
   this.generaterandcustArr();//order matters
   this.generaterandcookiesArr();
@@ -114,18 +97,10 @@ new Location('Seattle Center', 11, 38, 3.7);
 new Location('Capitol Hill', 20, 38, 2.3);
 new Location('Alki', 2, 16, 4.6);
 
-//CALL HEADER
-makeHeader();
-
-// CALL YOUR RENDER!!!-----------------------------
-for(var i = 0; i < allLocations.length; i++){
-  allLocations[i].render();
-}
 
 // TABLE TIME-!!!!!!!!!!!!!---------------------------
 
 //********   HEADER   ************
-
 //LOCATION************
 function makeHeader (){
   var trEl = document.createElement('tr');
@@ -133,7 +108,7 @@ function makeHeader (){
   tdEl.textContent = 'Location';
   trEl.appendChild(tdEl);
   tableBody.appendChild(trEl);
-
+  
   //Hours************
   for(var i=0; i < hourArr.length; i++){
     // declaring elements
@@ -144,7 +119,7 @@ function makeHeader (){
     // appends
     trEl.appendChild(thEl);
   }
-
+  
   //TOTAL************
   tdEl = document.createElement('td');
   tdEl.textContent = 'Total';
@@ -167,7 +142,7 @@ function makeFooter() {
   
   //Body of Footer***********
   for(i = 0; i < hourArr.length; i++) {
-    var hourlyTotal = 0; 
+    var hourlyTotal = 0;
     
     for(var j = 0; j < allLocations.length; j++){
       hourlyTotal += allLocations[j].randcookieArr[i];
@@ -183,15 +158,53 @@ function makeFooter() {
   for(var i=0; i < allLocations.length; i++) {
     grandTotal += allLocations[i].cookieTotal;
   }
-
+  
   tdEl = document.createElement('td');
   tdEl.textContent = grandTotal;
   trEl.appendChild(tdEl);
-};
+}
 
-//Call FOOTER FUNCTION
+
+//EVENT LISTENER---------------------------------------------
+// put a listener on the form -event(submit, callback function)
+formEl.addEventListener('submit', function(e){
+  e.preventDefault();
+  
+  var storename = e.target.storename.value;
+  console.log(storename);
+  var minimumcustomers = e.target.minimumcustomers.value;
+  console.log(minimumcustomers);
+  var maximumcustomers = e.target.maximumcustomers.value;
+  console.log(maximumcustomers);
+  var averagecookies = e.target.averagecookies.value;
+  console.log(averagecookies);
+  
+  //New instance
+  new Location(storename, minimumcustomers, maximumcustomers, averagecookies);
+
+  //Clear
+  tableBody.innerHTML = '';
+
+  //Executable code inside EVENT LISTENER
+  //*********CALL HEADER*********
+  makeHeader();
+
+  //*********CALL YOUR RENDER*********
+  for(var i = 0; i < allLocations.length; i++){
+    allLocations[i].render();
+  }
+  //*********Call FOOTER FUNCTION*********
+  makeFooter();
+});
+
+//Executable Code-----------------------------------
+//*********CALL HEADER*********
+makeHeader();
+
+//*********CALL YOUR RENDER*********
+for(var i = 0; i < allLocations.length; i++){
+  allLocations[i].render();
+}
+//*********Call FOOTER FUNCTION*********
 makeFooter();
-
-
-// Forms-Constructor
 
