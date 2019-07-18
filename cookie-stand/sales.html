@@ -7,23 +7,40 @@
   </head>
   <!-- BODY -->
   <body>
-    <!-- <h1>Average Cookies Sold Each Hour</h1> -->
+    <form id="myForm">
+      <fieldset>
+        <label>Brand New Store</label><br />
+        <label>Store Name:</label>
+          <input name="storename" type="text" />
+          <br />
 
-    <!-- <h2>Salmon Cookies are Bomb</h2> -->
+          <label>Minimum Number of Customers:</label>
+          <input name ="minimumcustomers" type="number" />
+          <br />
+
+          <label>Maximum Number of Customers:</label>
+          <input name ="maximumcustomers" type="number" />
+          <br />
+
+          <label>Average Cookies Sold:</label>
+          <input name ="averagecookies" type="number" />
+          <br />
+
+          <input type="submit" name="submitButton" value="Submit" />
+
+      </fieldset>
+    </form>
+
+    <h2>Salmon Cookies are Bomb</h2>
       <table>
           <tbody id="table"></tbody>
       </table>
 
-
-      <ul id="pike-cookie-list"></ul>
-      <ul id="seatac-cookie-list"></ul>
-      <ul id="seattlecenter-cookie-list"></ul>
-      <ul id="capitolhill-cookie-list"></ul>
-      <ul id="alki-cookie-list"></ul>
   </body>
+  
   <footer>
-    <p>copywrite 2019</p>
-    <script src="app.js"></script>
+    <!-- <p>copywrite 2019</p> -->
+    <script src="js/app.js"></script>
   </footer>
 </html>
 
