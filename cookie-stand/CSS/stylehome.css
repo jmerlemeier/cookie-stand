@@ -1,6 +1,5 @@
 body {
   background-color: #6A94CC;
-  /* border: solid 0.1em #225599; */
   margin: 2em;
   height: 100%;
 }
@@ -77,7 +76,7 @@ figcaption {
   overflow: scroll;
   font-family: 'Comfortaa', cursive; 
   border: solid 0.1em #225599; 
-  text-indent: 6%;
+  text-indent: 8%;
 }
 
 img.small {
