@@ -1,0 +1,9 @@
+body {
+  background-color: #6A94CC;
+  margin: 2em;
+  height: 100%;
+}
+
+#myForm {
+  border: solid 1em black;
+}
