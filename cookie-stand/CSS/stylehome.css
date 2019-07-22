@@ -1,0 +1,106 @@
+body {
+  background-color: #6A94CC;
+  margin: 2em;
+  height: 100%;
+}
+
+header {
+  background-color: #CC746A;
+  height: 18em;
+  margin: 5em;
+  border-top: solid 0.1em #9EFAFF;
+  border-left: solid 0.1em #9EFAFF;
+
+
+}
+
+h1 {
+  color: peachpuff;
+  font-size: 3em;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.4em;
+  text-align: center;
+  font-weight: bold;
+  padding: 1%;
+  background-color:#FF7B4F;
+  border: 2em solid #CC746A;
+}
+
+
+.topnav {
+  overflow: hidden;
+}
+
+/* Navbar links */
+.topnav a {
+  float: right;
+  display: block;
+  color: rgb(250, 222, 198);
+  text-align: center;
+  font-size: 0.8em;
+  font-family: 'Comfortaa', cursive;  
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #FF7B4F;
+  color: black;
+}
+
+li {
+  font-family: 'Poppins', sans-serif;
+}
+
+img.medium {
+  width: 30%;
+  margin: 5em;
+  margin-bottom: 0em;
+  border: solid 0.1em #225599;
+}
+
+
+figcaption {
+  margin-left: 5em;
+  margin-top: 0em;
+  margin-bottom: 5em;
+  padding-top: 0.8em;
+  padding-left: 0.8em;
+  height: 8em;
+  width: 29%;
+  color: #225599;
+  background-color: rgb(206, 177, 151);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  word-spacing: 0.3em;
+  overflow: scroll;
+  font-family: 'Comfortaa', cursive; 
+  border: solid 0.1em #225599; 
+  text-indent: 8%;
+}
+
+img.small {
+  width: 20%;
+  margin: 0em;
+  border: solid 0.1em #225599;
+}
+
+#triplets {
+  margin: 0em;
+  height: 20%;
+  /* display: inline-block; */
+  /* position: relative; */
+  float: right;
+}
+
+footer {
+  background-color: #CC746A;
+  height: 3em;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  text-align: center;
+  padding-top: 0.8em;
+  clear: both;
+}
