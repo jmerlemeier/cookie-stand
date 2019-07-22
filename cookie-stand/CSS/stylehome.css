@@ -70,6 +70,7 @@ figcaption {
   height: 8em;
   width: 29%;
   color: #225599;
+  background-color: rgb(206, 177, 151);
   font-weight: bold;
   letter-spacing: 0.1em;
   word-spacing: 0.3em;
@@ -81,10 +82,17 @@ figcaption {
 
 img.small {
   width: 20%;
-  margin: 5em;
+  margin: 0em;
   border: solid 0.1em #225599;
 }
 
+#triplets {
+  margin: 0em;
+  height: 20%;
+  /* display: inline-block; */
+  /* position: relative; */
+  float: right;
+}
 
 footer {
   background-color: #CC746A;
@@ -94,4 +102,5 @@ footer {
   font-size: 1em;
   text-align: center;
   padding-top: 0.8em;
+  clear: both;
 }

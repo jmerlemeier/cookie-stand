@@ -2,7 +2,7 @@
 .container {
   position: relative;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 /* Top left text */
@@ -22,13 +22,13 @@ section {
   /* background-color: ; */
   /* border: 0.4em solid #9EFAFF; */
   padding: 2.5em;
-  color: peachpuff;
+  color: black;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 0.2em;
 }
 
 h4 {
-  color: peachpuff;
+  color: black;
   font-size: 2.5em;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 2%;
