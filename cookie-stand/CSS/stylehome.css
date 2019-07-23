@@ -4,14 +4,12 @@ body {
   height: 100%;
 }
 
-header {
+#homeheader {
   background-color: #CC746A;
-  height: 18em;
+  height: 8em;
   margin: 5em;
   border-top: solid 0.1em #9EFAFF;
   border-left: solid 0.1em #9EFAFF;
-
-
 }
 
 h1 {

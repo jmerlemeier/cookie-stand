@@ -8,9 +8,6 @@ var hourArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm',
 //      will contain ENTIRE OBJECT INSTANCES (The made car/store from the factory)
 var allLocations = [];
 
-//*********  Total Cookie Sales Array  ********
-var totalcookiesalesperHour = [];
-
 //*********  Table Element  *********
 var tableBody = document.getElementById('table');
 
@@ -44,6 +41,9 @@ function(){
 //*********  RANDOM COOKIES METHOD PROTOTYPE  *********
 Location.prototype.generaterandcookiesArr =
 function(){
+  this.cookieTotal = 0;
+  this.randcookieArr = [];//clear out old data
+
   for(var i = 0; i < hourArr.length; i++){
     this.randcookieArr.push(Math.ceil(this.randcustArr[i]*this.avecookie));
     this.cookieTotal += (this.randcookieArr[i]);
