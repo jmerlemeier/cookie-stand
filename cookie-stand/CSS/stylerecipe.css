@@ -5,10 +5,27 @@ body {
 }
 
 h4 {
-  font-size: 6em;
+  font-size: 3em;
   text-shadow: 2px 2px #747272;
 }
+.topleft {
+  background-color: rgba(159, 157, 157, 0.4);
+  margin: 3em;
+  padding: 1em;
+  width: 40%;
+}
 
-#topleft {
-  font-size: 18em;
+li {
+  font-size: 1em;
+}
+
+p {
+  font-size: 1em;
+}
+
+#hometag {
+  margin: 4em;
+  background-color: rgba(159, 157, 157, 0.4);
+  width: 10%;
+  text-align: center;
 }
