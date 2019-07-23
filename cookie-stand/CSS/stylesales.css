@@ -4,6 +4,46 @@ body {
   height: 100%;
 }
 
+/* header {
+  background-color: #CC746A;
+  height: 8em;
+  margin: 5em;
+  border-top: solid 0.1em #9EFAFF;
+  border-left: solid 0.1em #9EFAFF;
+}
+
+h1 {
+  color: peachpuff;
+  font-size: 3em;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.4em;
+  text-align: center;
+  font-weight: bold;
+  padding: 1%;
+  background-color:#FF7B4F;
+  border: 2em solid #CC746A;
+} */
+
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  margin: 1.5em;
+}
+
 #myForm {
-  border: solid 1em black;
+  border: dashed 0.5em black;
+  text-align: center;
+}
+
+table {
+  text-align: center;
+  border: black solid 0.2em;
+  margin-left: 10%;
+}
+
+section {
+  text-align: center;
+  color: black;
+  margin-top: 8%;
 }

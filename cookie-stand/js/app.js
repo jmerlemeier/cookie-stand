@@ -30,13 +30,6 @@ function Location(name, mincust, maxcust, avecookie) {//factory
 
 }
 
-// HELPER FUNCTION, REMEBER TO CALL IT, ADD IF STATEMENTS inside.
-// function addElement(childElType, childContent, parentEl){
-//   var childElement = document.createElement(childElType);
-//   childElement.textContent = childContent;
-//   parentEl.appendChild(childElement);
-// }
-
 //RANDOM CUSTOMER METHOD PROTOTYPE----------------protoypes apply for every instance (every car/every store)
 //*********  PROTOTYPES  *********
 Location.prototype.generaterandcustArr = //first time we see generaterandcustArr
@@ -126,8 +119,7 @@ function makeFooter() {
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
 
-  tdEl.textContent = 'Hourly Totals for all Locations';
-
+  tdEl.textContent = 'Hourly Totals';
   trEl.appendChild(tdEl);
   tableBody.appendChild(trEl);
 
@@ -156,14 +148,15 @@ formEl.addEventListener('submit', function(e){//anonymous function which is the 
   e.preventDefault();
 
   var storename = e.target.storename.value;
-  console.log(storename);
+  // console.log(storename);
   var minimumcustomers = e.target.minimumcustomers.value;
-  console.log(minimumcustomers);
+  // console.log(minimumcustomers);
   var maximumcustomers = e.target.maximumcustomers.value;
-  console.log(maximumcustomers);
+  // console.log(maximumcustomers);
   var averagecookies = e.target.averagecookies.value;
-  console.log(averagecookies);
+  // console.log(averagecookies);
 
+  console.log(`max = ${maximumcustomers}, min =  ${minimumcustomers}, name = ${storename}, average cookies = ${averagecookies} `);
   //New instance
   new Location(storename, minimumcustomers, maximumcustomers, averagecookies);
 
