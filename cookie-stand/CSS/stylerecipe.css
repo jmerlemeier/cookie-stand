@@ -5,22 +5,27 @@ body {
 }
 
 h4 {
-  font-size: 3em;
-  text-shadow: 2px 2px #747272;
+  font-size: 2.0em;
+  
+  /* text-shadow: 2px 2px #747272; */
 }
 .topleft {
   background-color: rgba(159, 157, 157, 0.4);
   margin: 3em;
   padding: 1em;
-  width: 40%;
+  width: 43%;
+  font-family: 'Poppins', sans-serif;
+  word-spacing: 0.2em;
+  line-height: 1.4em;
+  text-indent: 0.5em;
 }
 
 li {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 p {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 #hometag {
