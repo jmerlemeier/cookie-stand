@@ -7,14 +7,15 @@
 
 /* Top left text */
 .top-left {
-  position: absolute;
   top: 8px;
   left: 16px;
+  z-index: 10;
 }
 
 
 img.large {
   height: 60em;
+  z-index: 1;
 }
 
 section {
@@ -39,6 +40,3 @@ p {
   text-indent: 6%;
 }
 
-/* li {
-  
-} */

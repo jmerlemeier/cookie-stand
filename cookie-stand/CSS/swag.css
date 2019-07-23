@@ -1,0 +1,32 @@
+#swagheader {
+  color: peachpuff;
+  font-size: 3em;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.4em;
+  margin: 0.5em;
+}
+
+body {
+  background-color: #6A94CC;
+  margin: 2em;
+  height: 100%;
+}
+
+h2 {
+  color: peachpuff;
+  font-size: 2em;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.2em;
+  text-align: center;
+  margin: 2em;
+}
+
+.smallswag {
+  border: solid black 0.3em;
+  width: 15%;
+  margin: 2em;
+}
+
+#hometag {
+  text-align: center;
+}

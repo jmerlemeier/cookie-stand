@@ -8,9 +8,6 @@ var hourArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm',
 //      will contain ENTIRE OBJECT INSTANCES (The made car/store from the factory)
 var allLocations = [];
 
-//*********  Total Cookie Sales Array  ********
-var totalcookiesalesperHour = [];
-
 //*********  Table Element  *********
 var tableBody = document.getElementById('table');
 
@@ -30,13 +27,6 @@ function Location(name, mincust, maxcust, avecookie) {//factory
 
 }
 
-// HELPER FUNCTION, REMEBER TO CALL IT, ADD IF STATEMENTS inside.
-// function addElement(childElType, childContent, parentEl){
-//   var childElement = document.createElement(childElType);
-//   childElement.textContent = childContent;
-//   parentEl.appendChild(childElement);
-// }
-
 //RANDOM CUSTOMER METHOD PROTOTYPE----------------protoypes apply for every instance (every car/every store)
 //*********  PROTOTYPES  *********
 Location.prototype.generaterandcustArr = //first time we see generaterandcustArr
@@ -51,6 +41,9 @@ function(){
 //*********  RANDOM COOKIES METHOD PROTOTYPE  *********
 Location.prototype.generaterandcookiesArr =
 function(){
+  this.cookieTotal = 0;
+  this.randcookieArr = [];//clear out old data
+
   for(var i = 0; i < hourArr.length; i++){
     this.randcookieArr.push(Math.ceil(this.randcustArr[i]*this.avecookie));
     this.cookieTotal += (this.randcookieArr[i]);
@@ -126,8 +119,7 @@ function makeFooter() {
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
 
-  tdEl.textContent = 'Hourly Totals for all Locations';
-
+  tdEl.textContent = 'Hourly Totals';
   trEl.appendChild(tdEl);
   tableBody.appendChild(trEl);
 
@@ -156,14 +148,15 @@ formEl.addEventListener('submit', function(e){//anonymous function which is the 
   e.preventDefault();
 
   var storename = e.target.storename.value;
-  console.log(storename);
+  // console.log(storename);
   var minimumcustomers = e.target.minimumcustomers.value;
-  console.log(minimumcustomers);
+  // console.log(minimumcustomers);
   var maximumcustomers = e.target.maximumcustomers.value;
-  console.log(maximumcustomers);
+  // console.log(maximumcustomers);
   var averagecookies = e.target.averagecookies.value;
-  console.log(averagecookies);
+  // console.log(averagecookies);
 
+  console.log(`max = ${maximumcustomers}, min =  ${minimumcustomers}, name = ${storename}, average cookies = ${averagecookies} `);
   //New instance
   new Location(storename, minimumcustomers, maximumcustomers, averagecookies);
 

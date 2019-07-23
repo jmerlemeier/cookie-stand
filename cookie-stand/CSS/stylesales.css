@@ -1,9 +1,68 @@
+#salesheader {
+  color: peachpuff;
+  font-size: 3em;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.4em;
+  margin: 0.5em;
+}
+
 body {
   background-color: #6A94CC;
   margin: 2em;
   height: 100%;
 }
 
+.form {
+  font-size: 0.7em;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.2em;
+}
+
+
+h2 {
+  color: peachpuff;
+  font-size: 2em;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.2em;
+  text-align: center;
+  margin: 2em;
+}
+
 #myForm {
-  border: solid 1em black;
+  height: 10%;
+  border: groove 0.2em black;
+  text-align: center;
+  padding: 5%;
+  margin-right: 18%;
+  margin-left: 18%;
+  margin-top: 6%;
+}
+
+table {
+  font-size: 0.8em;
+  font-family: 'Comfortaa', cursive; 
+  text-align: center;
+  border: black solid 0.2em;
+  margin-left: 8%;
+}
+
+
+tr:nth-child(odd) {
+  background: rgb(93, 93, 133, 0.4);
+}
+
+td:nth-child(1) {
+  background: rgb(93, 93, 133, 0.4);
+}
+
+td {
+  padding: 0.3em;
+}
+
+
+
+section {
+  text-align: center;
+  color: black;
+  margin-top: 8%;
 }
