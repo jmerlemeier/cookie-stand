@@ -24,18 +24,16 @@ function Location(name, mincust, maxcust, avecookie) {//factory
   this.randcustArr = [];
   this.randcookieArr = [];
   allLocations.push(this); //pushes all made cars/stores (instance) into the array
-
 }
 
 //RANDOM CUSTOMER METHOD PROTOTYPE----------------protoypes apply for every instance (every car/every store)
 //*********  PROTOTYPES  *********
-Location.prototype.generaterandcustArr = //first time we see generaterandcustArr
-function(){
+Location.prototype.generaterandcustArr = function(){
   for(var i  = 0; i < hourArr.length; i++){
     var random = Math.floor(Math.random() * (this.maxcust-this.mincust) + this.mincust);
     this.randcustArr.push(random);
   }
-  console.log('I am inside generaterandcustArr prototype.');
+  // console.log('I am inside generaterandcustArr prototype.');
 };
 
 //*********  RANDOM COOKIES METHOD PROTOTYPE  *********
@@ -48,7 +46,7 @@ function(){
     this.randcookieArr.push(Math.ceil(this.randcustArr[i]*this.avecookie));
     this.cookieTotal += (this.randcookieArr[i]);
   }
-  console.log('I am inside generaterandcookiesArr prototype.');
+  // console.log('I am inside generaterandcookiesArr prototype.');
 };
 
 // ********* RENDER ALL *********
@@ -97,12 +95,8 @@ function makeHeader (){
 
   //Hours************
   for(var i=0; i < hourArr.length; i++){
-    // declaring elements
     var thEl = document.createElement('th');
-    // appends
-    // content
     thEl.textContent = hourArr[i];
-    // appends
     trEl.appendChild(thEl);
   }
 
@@ -131,6 +125,8 @@ function makeFooter() {
       hourlyTotal += allLocations[j].randcookieArr[i];
       grandTotal += allLocations[j].randcookieArr[i];
     }
+
+
     tdEl = document.createElement('td');
     tdEl.textContent = hourlyTotal;
     trEl.appendChild(tdEl);
@@ -140,6 +136,8 @@ function makeFooter() {
   trEl.appendChild(tdEl);
   tableBody.appendChild(trEl);
 }
+
+console.log(allLocations);
 
 
 //EVENT LISTENER---------------------------------------------
